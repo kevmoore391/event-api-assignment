@@ -3,6 +3,10 @@ using Microsoft.OpenApi.Models;
 using event_api.Models;
 using event_api.Services;
 using FluentScheduler;
+using System;
+using System.Configuration;
+using System.Collections.Specialized;
+
 namespace event_api
 {
     public class Startup
@@ -23,7 +27,7 @@ namespace event_api
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "event-api", Version = "v1" });
             });
             services.AddScoped<EventService, EventService>();
-            services.AddDbContext<EventContext>(options => options.UseSqlServer("Server=tcp:event-apidbserver.database.windows.net,1433;Initial Catalog=event-api_db;Persist Security Info=False;User ID=rootuser;Password=Tayto123.;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"));
+            services.AddDbContext<EventContext>(options => options.UseSqlServer(System.Configuration.ConfigurationManager.AppSettings.Get("sqlServerConnection")));
 
         }
 

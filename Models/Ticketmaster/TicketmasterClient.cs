@@ -14,8 +14,10 @@ namespace event_api.Models
             List<TicketMasterEvent> eventList = new List<TicketMasterEvent>();
             using (var httpClient = new HttpClient())
             {
+                var ticketMasterURI = System.Configuration.ConfigurationManager.AppSettings.Get("TicketmasterURI");
+                var ticketMasterToken = System.Configuration.ConfigurationManager.AppSettings.Get("TicketmasterToken");
                 httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                using (var response = await httpClient.GetAsync("https://app.ticketmaster.com/discovery/v2/events?apikey=Nah4D2mJlI4fRTfwmPDd2cacDEmvPxZo&locale=*"))
+                using (var response = await httpClient.GetAsync(ticketMasterURI + "/events?apikey=" + ticketMasterToken  + "&locale=*"))
                 {
                     response.EnsureSuccessStatusCode();
                     var apiResponse = response.Content.ReadAsStringAsync();

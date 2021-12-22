@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rSdr/UgP+EurXvAFkMFNqdyZmRFGXdNJA/KIkOXCTase4goE3QJ8Rde1tX0+Atu3CJyaotNfU+802hQc7nb/1Q==",
+  "dgSpecHash": "t6iiM3S8ou3Y7btZ+mBpH4B20gBfkNeZfqAKQ+Av13sWeHG0KG/O/JsrCyJMNwBXzZ2Z/xCLuxe/0RNRjsMXEw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\moorek\\source\\repos\\event-api\\event-api\\event-api.csproj",
+  "projectFilePath": "C:\\Users\\moorek\\Repositories\\event-api-assignment\\event-api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\moorek\\.nuget\\packages\\fluentscheduler\\5.5.1\\fluentscheduler.5.5.1.nupkg.sha512",
     "C:\\Users\\moorek\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
