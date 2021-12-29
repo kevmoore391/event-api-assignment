@@ -1,4 +1,4 @@
-﻿namespace event_api.Models
+﻿namespace EventApiAssignment.Models
 {
     public class TicketMasterEventVenueCity
     {

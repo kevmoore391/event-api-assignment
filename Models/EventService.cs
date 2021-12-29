@@ -1,13 +1,15 @@
 ﻿using System.Configuration;
 using Microsoft.EntityFrameworkCore;
-namespace event_api.Models
+using ConfigurationManager = System.Configuration.ConfigurationManager;
+namespace EventApiAssignment.Models
+
 {
     public class EventService
     {
         private readonly EventContext _context;
         public EventService()
         {
-            var options = new DbContextOptionsBuilder<EventContext>().UseSqlServer(System.Configuration.ConfigurationManager.AppSettings.Get("sqlServerConnection")).Options;
+            var options = new DbContextOptionsBuilder<EventContext>().UseSqlServer(ConfigurationManager.AppSettings.Get("sqlServerConnection")).Options;
             _context = new EventContext(options);
         }
 
@@ -53,7 +55,7 @@ namespace event_api.Models
             Console.WriteLine("Finished Seat Geek Retrieval");
         }
 
-        protected void saveEvent(Event eventToSave)
+        private void saveEvent(Event eventToSave)
         {
             var existingEvent = _context.Events.Find(eventToSave.Id);
             if (existingEvent == null)
@@ -62,7 +64,7 @@ namespace event_api.Models
             }
         }
 
-        protected Event? ToEvent(TicketMasterEvent ticketMasterEvent)
+        private Event? ToEvent(TicketMasterEvent ticketMasterEvent)
         {
 
             if (ticketMasterEvent == null) return null;
@@ -79,7 +81,7 @@ namespace event_api.Models
             };
         }
 
-        protected Event? ToEvent(SeatGeekEvent seatGeekEvent)
+        private Event? ToEvent(SeatGeekEvent seatGeekEvent)
         {
 
             if (seatGeekEvent == null) return null;

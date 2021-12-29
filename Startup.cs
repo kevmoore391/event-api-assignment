@@ -1,13 +1,13 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
-using event_api.Models;
-using event_api.Services;
+using EventApiAssignment.Models;
+using EventApiAssignment.Services;
 using FluentScheduler;
 using System;
 using System.Configuration;
 using System.Collections.Specialized;
 
-namespace event_api
+namespace EventApiAssignment
 {
     public class Startup
     {

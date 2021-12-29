@@ -1,16 +1,16 @@
 ﻿
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using event_api.Models;
+using EventApiAssignment.Models;
+using System.Text.RegularExpressions;
 
-namespace event_api.Controllers
+namespace EventApiAssignment.Controllers
 {
     [Route("/[controller]")]
     [ApiController]
     public class EventController : ControllerBase
     {
         private readonly EventContext _context;
-        private readonly EventService _eventService;
         
         public EventController(EventContext context)
         {
@@ -19,15 +19,20 @@ namespace event_api.Controllers
 
         // GET: /Event
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Event>>> GetEvents()
+        public List<Event> GetEvents()
         {
-            return await _context.Events.ToListAsync();
+            return _context.Events.ToList();
         }
 
         // GET: Event/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<Event>> GetEvent(long id)
+        public async Task<ActionResult<Event>> GetEvent(string id)
         {
+            if (!validateId(id))
+            {
+                return ValidationProblem("Id must be alphanumeric");
+            }
+
             var foundEvent = await _context.Events.FindAsync(id);
 
             if (foundEvent == null)
@@ -43,12 +48,24 @@ namespace event_api.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> PutEvent(string id, Event eventToUpdate)
         {
+            if (!validateId(id))
+            {
+                return ValidationProblem("Id must be alphanumeric");
+            }
+
             if (id != eventToUpdate.Id)
             {
                 return BadRequest();
             }
+            var foundEvent = await _context.Events.FindAsync(id);
+            foundEvent.EventName = eventToUpdate.EventName;
+            foundEvent.VenueName = eventToUpdate.VenueName;
+            foundEvent.VenueCity = eventToUpdate.VenueCity;
+            foundEvent.EventDescription = eventToUpdate.EventDescription;
+            foundEvent.Type = eventToUpdate.Type;
+            foundEvent.PerformanceDate = eventToUpdate.PerformanceDate;
 
-            _context.Entry(eventToUpdate).State = EntityState.Modified;
+            _context.Update(foundEvent);
 
             try
             {
@@ -72,7 +89,7 @@ namespace event_api.Controllers
         // POST: Event
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
-        public async Task<ActionResult<Event>> PostTodoItem(Event eventToSave)
+        public async Task<ActionResult<Event>> PostEventItem(Event eventToSave)
         {
             _context.Events.Add(eventToSave);
             await _context.SaveChangesAsync();
@@ -82,8 +99,13 @@ namespace event_api.Controllers
 
         // DELETE: Event/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteTodoItem(long id)
+        public async Task<IActionResult> DeleteEventItem(string id)
         {
+            if (!validateId(id))
+            {
+                return ValidationProblem("Id must be alphanumeric");
+            }
+
             var eventToDelete = await _context.Events.FindAsync(id);
             if (eventToDelete == null)
             {
@@ -94,6 +116,12 @@ namespace event_api.Controllers
             await _context.SaveChangesAsync();
 
             return NoContent();
+        }
+
+        private bool validateId(string input)
+        {
+            Regex rgx = new Regex("^[a-zA-Z0-9]*$");
+            return rgx.IsMatch(input);
         }
 
         private bool EventExists(string id)

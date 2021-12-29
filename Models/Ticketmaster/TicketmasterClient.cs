@@ -1,6 +1,7 @@
 ﻿using System.Net.Http.Headers;
 using Newtonsoft.Json;
-namespace event_api.Models
+using ConfigurationManager = System.Configuration.ConfigurationManager;
+namespace EventApiAssignment.Models
 {
     public class TicketmasterClient
     {
@@ -14,8 +15,8 @@ namespace event_api.Models
             List<TicketMasterEvent> eventList = new List<TicketMasterEvent>();
             using (var httpClient = new HttpClient())
             {
-                var ticketMasterURI = System.Configuration.ConfigurationManager.AppSettings.Get("TicketmasterURI");
-                var ticketMasterToken = System.Configuration.ConfigurationManager.AppSettings.Get("TicketmasterToken");
+                var ticketMasterURI = ConfigurationManager.AppSettings.Get("TicketmasterURI");
+                var ticketMasterToken = ConfigurationManager.AppSettings.Get("TicketmasterToken");
                 httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 using (var response = await httpClient.GetAsync(ticketMasterURI + "/events?stateCode=NY&apikey=" + ticketMasterToken  + "&locale=*"))
                 {

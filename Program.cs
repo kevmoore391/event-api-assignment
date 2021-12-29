@@ -1,7 +1,7 @@
 using System.Configuration;
 using System.Collections.Specialized;
 
-namespace event_api
+namespace EventApiAssignment
 {
     public class Program
     {

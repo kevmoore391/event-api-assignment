@@ -15,7 +15,27 @@
       "ProjectGuid": "f745197d-da3e-47aa-ab30-08f0124642ed",
       "DisplayName": "event-api",
       "ColorIndex": 1
+    },
+    "258864f2-d05c-40a7-9221-5ca7d0506b2d": {
+      "ProjectGuid": "258864f2-d05c-40a7-9221-5ca7d0506b2d",
+      "DisplayName": "EventApiAssignment",
+      "ColorIndex": 2
+    },
+    "162a74e3-6d65-4017-9ff3-da1d5f613d39": {
+      "ProjectGuid": "162a74e3-6d65-4017-9ff3-da1d5f613d39",
+      "DisplayName": "event-api.Tests",
+      "ColorIndex": 3
+    },
+    "d56aedea-8df6-4956-8440-8be94ac10b1a": {
+      "ProjectGuid": "d56aedea-8df6-4956-8440-8be94ac10b1a",
+      "DisplayName": "event-api.Test",
+      "ColorIndex": 4
+    },
+    "92171e53-1275-4eb6-8d41-902e571f0d04": {
+      "ProjectGuid": "92171e53-1275-4eb6-8d41-902e571f0d04",
+      "DisplayName": "EventApiAssignment.Tests",
+      "ColorIndex": 5
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 6
 }
