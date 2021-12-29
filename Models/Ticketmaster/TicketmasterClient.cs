@@ -17,7 +17,7 @@ namespace event_api.Models
                 var ticketMasterURI = System.Configuration.ConfigurationManager.AppSettings.Get("TicketmasterURI");
                 var ticketMasterToken = System.Configuration.ConfigurationManager.AppSettings.Get("TicketmasterToken");
                 httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                using (var response = await httpClient.GetAsync(ticketMasterURI + "/events?apikey=" + ticketMasterToken  + "&locale=*"))
+                using (var response = await httpClient.GetAsync(ticketMasterURI + "/events?stateCode=NY&apikey=" + ticketMasterToken  + "&locale=*"))
                 {
                     response.EnsureSuccessStatusCode();
                     var apiResponse = response.Content.ReadAsStringAsync();
