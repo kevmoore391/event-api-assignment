@@ -11,12 +11,13 @@ https://event-api-assignment.azurewebsites.net/swagger/index.html
 - Both local and hosted versions utilize the same database connection, so it is easy to test from either version.
 - While running locally, we can see some print outs within the console, emphasizing that the schedule is kicking off the tasks as expected and finishing after the public api's have been engaged for further event data.
 
-### Considerations Made:
+### Considerations for enhancements:
 - The connection strings should be moved to a secret vault for security purposes. The azure vault is not available on a free azure account so the connection strings will stay in the config file for the purpose of this assignment.
-- I wanted it to be easy to connect to a database locally, without having to run mysql or postgres locally. Azure sql databases was very quick to setup and was the best option to make this possible for the assignment.
-- Because the hosted SQL database can be accessed by a loccaly run version, I had to configure the database wirewall to allow all connections. Outside of this assignment, this would not be ideal, and specific ip addresses would be specified.
+- I wanted it to be easy to connect to a database locally, without having to run mysql or postgres locally. Azure sql databases was very quick to setup and was the best option to make this possible for the assignment. Because the hosted SQL database can be accessed by a loccaly run version, I had to configure the database wirewall to allow all connections. Outside of this assignment, this would not be ideal and specific ip addresses would be specified.
 - As Ticketmaster and SeatGeek both offer a vast choice of api's, I chose simple examples for the purpose of this assignment.
- - For Ticketmaster, im using thier /event?StateCode=NY endpoint.
- - For SeatGeek im using thier /events?venue.state=NY endpoint.
- - This could be further expanded to cycle to a list of state codes or to attempt to search via specific performer or venue.
- - Both Apis require a api token which are stored in the  App.Config file for this assignment.
+  - For Ticketmaster, im using thier /event?StateCode=NY endpoint.
+  - For SeatGeek im using thier /events?venue.state=NY endpoint.
+  - This could be further expanded to cycle to a list of state codes or to attempt to search via specific performer or venue.
+  - Both Apis require a api token which are stored in the  App.Config file for this assignment.
+- I created a test project to create unit tests for the Controller. however for the sake of the assignment i added the Test directory and the commented EventControllerTest file. All the tests pass. Further from this I would flesh out tests for all other functionality and find a way to have them execute in the same project, and to execute on github when the branch is pushed.
+- For security purposes I added input validation on the endpoints where an Id is accepted. To expand on this I would add validation for the Event object attributes. 
