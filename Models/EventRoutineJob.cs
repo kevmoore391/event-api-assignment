@@ -1,6 +1,6 @@
 ﻿using FluentScheduler;
-using event_api.Models;
-namespace event_api.Services
+using EventApiAssignment.Models;
+namespace EventApiAssignment.Services
 {
     public class EventRoutineJob : IJob
     {

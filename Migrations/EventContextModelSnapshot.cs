@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using event_api.Models;
+using EventApiAssignment.Models;
 
 #nullable disable
 
-namespace event_api.Migrations
+namespace EventApiAssignment.Migrations
 {
     [DbContext(typeof(EventContext))]
     partial class EventContextModelSnapshot : ModelSnapshot

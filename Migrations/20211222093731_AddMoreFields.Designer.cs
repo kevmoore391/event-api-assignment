@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using event_api.Models;
+using EventApiAssignment.Models;
 
 #nullable disable
 
-namespace event_api.Migrations
+namespace EventApiAssignment.Migrations
 {
     [DbContext(typeof(EventContext))]
     [Migration("20211222093731_AddMoreFields")]

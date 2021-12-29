@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.Diagnostics.CodeAnalysis;
 
-namespace event_api.Models
+namespace EventApiAssignment.Models
 {
     public class EventContext : DbContext
     {

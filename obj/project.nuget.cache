@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "t6iiM3S8ou3Y7btZ+mBpH4B20gBfkNeZfqAKQ+Av13sWeHG0KG/O/JsrCyJMNwBXzZ2Z/xCLuxe/0RNRjsMXEw==",
+  "dgSpecHash": "+76vQY7fQVMTPiEt/6u7C1DPZpe6PJMnl5FxiL9GOlxIR9QglC+npLL2kqTXxrBdAi5LDAd+aA7ljKgSHTdCOg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\moorek\\Repositories\\event-api-assignment\\event-api.csproj",
+  "projectFilePath": "C:\\Users\\moorek\\Repositories\\event-api-assignment\\EventApiAssignment.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\moorek\\.nuget\\packages\\fluentscheduler\\5.5.1\\fluentscheduler.5.5.1.nupkg.sha512",
     "C:\\Users\\moorek\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
@@ -62,6 +62,7 @@
     "C:\\Users\\moorek\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\moorek\\.nuget\\packages\\microsoft.netcore.targets\\1.1.0\\microsoft.netcore.targets.1.1.0.nupkg.sha512",
     "C:\\Users\\moorek\\.nuget\\packages\\microsoft.openapi\\1.2.3\\microsoft.openapi.1.2.3.nupkg.sha512",
+    "C:\\Users\\moorek\\.nuget\\packages\\microsoft.testplatform\\17.0.0\\microsoft.testplatform.17.0.0.nupkg.sha512",
     "C:\\Users\\moorek\\.nuget\\packages\\microsoft.visualstudio.debugger.contracts\\17.2.0\\microsoft.visualstudio.debugger.contracts.17.2.0.nupkg.sha512",
     "C:\\Users\\moorek\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration\\6.0.1\\microsoft.visualstudio.web.codegeneration.6.0.1.nupkg.sha512",
     "C:\\Users\\moorek\\.nuget\\packages\\microsoft.visualstudio.web.codegeneration.core\\6.0.1\\microsoft.visualstudio.web.codegeneration.core.6.0.1.nupkg.sha512",

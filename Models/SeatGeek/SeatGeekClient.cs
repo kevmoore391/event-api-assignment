@@ -1,6 +1,7 @@
 ﻿using System.Net.Http.Headers;
 using Newtonsoft.Json;
-namespace event_api.Models
+using ConfigurationManager = System.Configuration.ConfigurationManager;
+namespace EventApiAssignment.Models
 {
     public class SeakGeekClient
     {
@@ -14,8 +15,8 @@ namespace event_api.Models
             List<SeatGeekEvent> eventList = new List<SeatGeekEvent>();
             using (var httpClient = new HttpClient())
             {
-                var SeatGeekURI = System.Configuration.ConfigurationManager.AppSettings.Get("SeatGeekURI");
-                var SeatGeekToken = System.Configuration.ConfigurationManager.AppSettings.Get("SeatGeekToken");
+                var SeatGeekURI = ConfigurationManager.AppSettings.Get("SeatGeekURI");
+                var SeatGeekToken = ConfigurationManager.AppSettings.Get("SeatGeekToken");
                 httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
                 using (var response = await httpClient.GetAsync(SeatGeekURI + "/events?venue.state=NY&client_id=" + SeatGeekToken))
                 {
