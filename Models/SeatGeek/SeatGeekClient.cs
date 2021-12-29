@@ -14,8 +14,10 @@ namespace event_api.Models
             List<SeatGeekEvent> eventList = new List<SeatGeekEvent>();
             using (var httpClient = new HttpClient())
             {
+                var SeatGeekURI = System.Configuration.ConfigurationManager.AppSettings.Get("SeatGeekURI");
+                var SeatGeekToken = System.Configuration.ConfigurationManager.AppSettings.Get("SeatGeekToken");
                 httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                using (var response = await httpClient.GetAsync("https://api.seatgeek.com/2/events?venue.state=NY&client_id=MjUwNjYxNTZ8MTY0MDAyMzY4NS40NzAxNTU"))
+                using (var response = await httpClient.GetAsync(SeatGeekURI + "/events?venue.state=NY&client_id=" + SeatGeekToken))
                 {
                     response.EnsureSuccessStatusCode();
                     var apiResponse = response.Content.ReadAsStringAsync();

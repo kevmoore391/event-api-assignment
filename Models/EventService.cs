@@ -7,7 +7,7 @@ namespace event_api.Models
         private readonly EventContext _context;
         public EventService()
         {
-            var options = new DbContextOptionsBuilder<EventContext>().UseSqlServer("Server=tcp:event-apidbserver.database.windows.net,1433;Initial Catalog=event-api_db;Persist Security Info=False;User ID=rootuser;Password=Tayto123.;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;").Options;
+            var options = new DbContextOptionsBuilder<EventContext>().UseSqlServer(System.Configuration.ConfigurationManager.AppSettings.Get("sqlServerConnection")).Options;
             _context = new EventContext(options);
         }
 

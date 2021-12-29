@@ -9666,11 +9666,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\moorek\\source\\repos\\event-api\\event-api\\event-api.csproj",
+      "projectUniqueName": "C:\\Users\\moorek\\Repositories\\event-api-assignment\\event-api.csproj",
       "projectName": "event-api",
-      "projectPath": "C:\\Users\\moorek\\source\\repos\\event-api\\event-api\\event-api.csproj",
+      "projectPath": "C:\\Users\\moorek\\Repositories\\event-api-assignment\\event-api.csproj",
       "packagesPath": "C:\\Users\\moorek\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\moorek\\source\\repos\\event-api\\event-api\\obj\\",
+      "outputPath": "C:\\Users\\moorek\\Repositories\\event-api-assignment\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\moorek\\AppData\\Roaming\\NuGet\\NuGet.Config",
