@@ -44,7 +44,6 @@ namespace EventApiAssignment.Controllers
         }
 
         // PUT: Event/5
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPut("{id}")]
         public async Task<IActionResult> PutEvent(string id, Event eventToUpdate)
         {
@@ -87,7 +86,6 @@ namespace EventApiAssignment.Controllers
         }
 
         // POST: Event
-        // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
         [HttpPost]
         public async Task<ActionResult<Event>> PostEventItem(Event eventToSave)
         {
