@@ -1,10 +1,10 @@
-C:\Users\moorek\Repositories\event-api-assignment\obj\Release\net6.0\PubTmp\Out\event-api.exe
+C:\Users\moorek\Repositories\event-api-assignment\obj\Release\net6.0\PubTmp\Out\EventApiAssignment.exe
 C:\Users\moorek\Repositories\event-api-assignment\obj\Release\net6.0\PubTmp\Out\appsettings.Development.json
 C:\Users\moorek\Repositories\event-api-assignment\obj\Release\net6.0\PubTmp\Out\appsettings.json
-C:\Users\moorek\Repositories\event-api-assignment\obj\Release\net6.0\PubTmp\Out\event-api.dll
-C:\Users\moorek\Repositories\event-api-assignment\obj\Release\net6.0\PubTmp\Out\event-api.runtimeconfig.json
-C:\Users\moorek\Repositories\event-api-assignment\obj\Release\net6.0\PubTmp\Out\event-api.dll.config
-C:\Users\moorek\Repositories\event-api-assignment\obj\Release\net6.0\PubTmp\Out\event-api.pdb
+C:\Users\moorek\Repositories\event-api-assignment\obj\Release\net6.0\PubTmp\Out\EventApiAssignment.dll
+C:\Users\moorek\Repositories\event-api-assignment\obj\Release\net6.0\PubTmp\Out\EventApiAssignment.runtimeconfig.json
+C:\Users\moorek\Repositories\event-api-assignment\obj\Release\net6.0\PubTmp\Out\EventApiAssignment.dll.config
+C:\Users\moorek\Repositories\event-api-assignment\obj\Release\net6.0\PubTmp\Out\EventApiAssignment.pdb
 C:\Users\moorek\Repositories\event-api-assignment\obj\Release\net6.0\PubTmp\Out\FluentScheduler.dll
 C:\Users\moorek\Repositories\event-api-assignment\obj\Release\net6.0\PubTmp\Out\Humanizer.dll
 C:\Users\moorek\Repositories\event-api-assignment\obj\Release\net6.0\PubTmp\Out\MessagePack.dll
@@ -245,4 +245,4 @@ C:\Users\moorek\Repositories\event-api-assignment\obj\Release\net6.0\PubTmp\Out\
 C:\Users\moorek\Repositories\event-api-assignment\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\moorek\Repositories\event-api-assignment\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\moorek\Repositories\event-api-assignment\obj\Release\net6.0\PubTmp\Out\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-C:\Users\moorek\Repositories\event-api-assignment\obj\Release\net6.0\PubTmp\Out\event-api.deps.json
+C:\Users\moorek\Repositories\event-api-assignment\obj\Release\net6.0\PubTmp\Out\EventApiAssignment.deps.json
