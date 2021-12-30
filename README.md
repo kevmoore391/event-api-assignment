@@ -29,6 +29,7 @@
 - While running locally, we can see some print outs within the console, emphasizing that the schedule is kicking off the tasks as expected and finishing after the public api's have been engaged for further event data.
 
 ### Considerations for enhancements:
+- This app could be split up, if in a microservice architecture, the scheduled process could be one app while the controller could be is own app.
 - The connection strings should be moved to a secret vault for security purposes. The azure vault is not available on a free azure account so the connection strings will stay in the config file for the purpose of this assignment.
 - I wanted it to be easy to connect to a database locally, without having to run mysql or postgres locally. Azure sql databases was very quick to setup and was the best option to make this possible for the assignment. Since the hosted SQL database can be accessed by a loccaly run version, I had to configure the database wirewall to allow all connections. Outside of this assignment, this would not be ideal and specific ip addresses would be specified.
 - As Ticketmaster and SeatGeek both offer a vast choice of api's, I chose simple examples for the purpose of this assignment.
