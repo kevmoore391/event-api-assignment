@@ -16,7 +16,7 @@
   - Fluent Scheduler Is initialized in the startup.cs file and calls upon a registry class (Model/ScheduleEventRoutine.cs) which outlines the rules of the schedule
     - For the assignment, I set a single instance of the schedule to run, after a 3 second delay, and to run every 60 seconds (would be changed for a real life setting)
   - The Schedule calls on a job class (Model/EventRoutineJob.cs) which executes the job we need done. We simply create an instance of the event service (Model/EventService.cs) and call the initial functions.
-- Event data from the APIs via rest (Modal/Ticketmaster/TicketmasterClient.cs & Modal/SeatGeek/SeatGeek.cs) and stored as a common entity type (Model/Event.cs) in an SQL database hosted on azure.
+- Event data from the APIs via rest (Modal/Ticketmaster/TicketmasterClient.cs & Modal/SeatGeek/SeatGeekClient.cs) and stored as a common entity type (Model/Event.cs) in an SQL database hosted on azure. Since both public API's offer a wide range of various data attributes, I chose a sample subset for the assignment, but more data is very easily accessible. 
 - The application provides a number of restful API endpoints which can be utilized by an external source, to access the unified event data and to manipulate it where required.
   - GET /Event - Gets a list of all events stored in the DB
   - POST /Event - allows a user to manually save the new provided event to the DB
@@ -31,11 +31,11 @@
 ### Considerations for enhancements:
 - This app could be split up, if in a microservice architecture, the scheduled process could be one app while the controller could be is own app.
 - The connection strings should be moved to a secret vault for security purposes. The azure vault is not available on a free azure account so the connection strings will stay in the config file for the purpose of this assignment.
-- I wanted it to be easy to connect to a database locally, without having to run mysql or postgres locally. Azure sql databases was very quick to setup and was the best option to make this possible for the assignment. Since the hosted SQL database can be accessed by a loccaly run version, I had to configure the database wirewall to allow all connections. Outside of this assignment, this would not be ideal and specific ip addresses would be specified.
+- I wanted it to be easy to connect to a database locally, without having to run mysql or postgres locally. Azure sql databases was very quick to setup and was the best option to make this possible for the assignment. Since the hosted SQL database can be accessed by a loccaly run version, I had to configure the database firewall to allow all connections. Outside of this assignment, this would not be ideal and specific ip addresses would be specified.
 - As Ticketmaster and SeatGeek both offer a vast choice of api's, I chose simple examples for the purpose of this assignment.
   - For Ticketmaster, im using thier /event?StateCode=NY endpoint.
   - For SeatGeek im using thier /events?venue.state=NY endpoint.
   - This could be further expanded to cycle tthrough a list of state codes or to attempt to search via specific performer or venue.
   - Both Apis require an API token which are stored in the  App.Config file for this assignment.
-- I created a test project to create unit tests for the Controller. However for the sake of the assignment i added the Test directory and the commented EventControllerTest file. All the tests pass. Further from this I would flesh out tests to use the endpoints rather than direct function names. I would also create tests for all other functionality and find a way to have them execute in the same project (rather than a referencing test project) and find a way to execute the tests on github when the branch is pushed.
+- I created a test project to create unit tests for the Controller. However for the sake of the assignment i added the Test directory and the commented EventControllerTest file. All the tests pass. Further from this I would flesh out tests to use the endpoints rather than direct function names. I would also create tests for all other functionality and find a way to have them execute in the same project (rather than a referencing test project) and find a way to execute the tests on github when the branch is pushed. The tests use memory storage as a mock database for testing which might not be ideal, so a proper solution may be needed there.
 - For security purposes the endpoints could be locked down to particular users or services within azure.
